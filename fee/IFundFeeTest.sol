@@ -55,7 +55,7 @@ interface IFundFee {
 
     function fundFeeLoss(address) external view returns (uint256);
 
-    function setTimeStamp(uint256 ts) external;
+    function setTimeStamp(address market, uint256 ts) external;
 
     function lastCalRate(
         address market,

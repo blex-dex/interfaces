@@ -67,5 +67,5 @@ interface IFundFee {
         bool
     ) external view returns (int256, int256);
 
-    function resetFeeLoss(address market) external;
+    function resetFeeLoss(address market, uint256 amount) external;
 }

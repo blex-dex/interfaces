@@ -68,4 +68,22 @@ interface IFundFee {
     ) external view returns (int256, int256);
 
     function resetFeeLoss(address market, uint256 amount) external;
+
+    function updateGlobalCalRate(
+        address market,
+        int256 cumLongRateDelta,
+        int256 cumShortRateDelta,
+        uint256 roundedTime
+    ) external;
+
+    function updateGlobalFundingRate(
+        address market,
+        int256 longRate,
+        int256 shortRate,
+        int256 nextLongRate,
+        int256 nextShortRate,
+        uint256 timestamp
+    ) external;
+
+    function resetCalFundRate(address market, uint256 updatedAt) external;
 }

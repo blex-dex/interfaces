@@ -18,6 +18,11 @@ interface IFundFee {
 
     function initialize(address store) external;
 
+   function setFundingInterval_init(
+        address[] memory markets,
+        uint256[] memory intervals
+    ) external ;
+
     function setMinRateLimit(uint256 limit) external;
 
     function setFundingInterval(

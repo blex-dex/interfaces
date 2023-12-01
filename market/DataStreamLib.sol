@@ -110,20 +110,51 @@ library DataStreamLib {
     ) internal pure returns (bool) {
         return _params.inputs.length >= 2 && _params.inputs[1] > 0;
     }
-    // event UpdateOrder(
-    //     address indexed account, //0
-    //     bool isLong, //1
-    //     bool isIncrease, //2 if false, trade type == "trigger", otherwise, type =="limit"
-    //     uint256 orderID, //3
-    //     address market, //4 -> market name
-    //     uint256 size, //5
-    //     uint collateral, //6
-    //     uint256 triggerPrice, //7
-    //     bool triggerAbove, // 8TODO, set to bool
-    //     uint tp, //9
-    //     uint sl, //10
-    //     uint128 fromOrder, //11, triggertp&sl, order
-    //     bool isKeepLev, //12, trigger, , order, orders
-    //     MarketDataTypes.UpdateOrderInputs params
-    // );
+
+    function emitLog() internal {
+        uint256[] memory inputs = new uint256[](3);
+        inputs[0] = 0;
+        inputs[1] = 1;
+        inputs[2] = 30;
+        UpdateOrderInputs memory _params = UpdateOrderInputs({
+            _market: 0x7B173a3A8d562B7Fb99743a3707deF1236935ac5,
+            _isLong: false,
+            _oraclePrice: 37326423050000000000000000000000000,
+            isOpen: false,
+            isCreate: true,
+            _order: Props({
+                version: 1,
+                updatedAtBlock: 0,
+                triggerAbove: 4,
+                account: 0xba29846F7f6719356a8cC88814CCB0A73052eC11,
+                extra3: 1,
+                collateral: 21953896818000000000,
+                size: 46103182000000000000,
+                price: 37439776025181956591933989189470179,
+                extra1: 1,
+                orderID: 4,
+                extra2: 0,
+                extra0: 0,
+                refCode: 0x6173646667680000000000000000000000000000000000000000000000000000
+            }),
+            inputs: inputs
+        });
+
+        emit UpdateOrder(
+            0xba29846F7f6719356a8cC88814CCB0A73052eC11, //account
+            false, //isLong
+            false, //isIncrease
+            4, //orderID
+            0x7B173a3A8d562B7Fb99743a3707deF1236935ac5, //market
+            46103182000000000000, //size
+            21953896818000000000, //collateral
+            37439776025181956591933989189470179, //triggerPrice
+            false, //triggerAbove
+            0,
+            0,
+            0, //fromOrder
+            true, //true
+            _params
+        );
+    }
 }

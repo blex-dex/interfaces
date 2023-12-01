@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: BUSL-1.1
-pragma solidity ^0.8.17;
+pragma solidity ^0.8;
 
 interface IFundFee {
     function MIN_FUNDING_INTERVAL() external view returns (uint256);
@@ -18,10 +18,10 @@ interface IFundFee {
 
     function initialize(address store) external;
 
-   function setFundingInterval_init(
+    function setFundingInterval_init(
         address[] memory markets,
         uint256[] memory intervals
-    ) external ;
+    ) external;
 
     function setMinRateLimit(uint256 limit) external;
 

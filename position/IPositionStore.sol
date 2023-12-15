@@ -41,4 +41,9 @@ interface IPositionStore {
     function getLiq(
         address account
     ) external view returns (Position.Liquidate memory, bool has);
+
+    function addLiq(
+        address[] memory account,
+        Position.Liquidate[] memory liqs
+    ) external returns (bool wasAdded);
 }

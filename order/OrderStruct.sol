@@ -7,14 +7,6 @@ library Order {
 
     uint8 public constant STRUCT_VERSION = 0x01;
 
-    //0. Keep leverage when the Take Profit order is triggered (0 for false, 1 for true)
-    uint64 private constant EXTRA2_ADD_POS_KEEP_LEV_ON_TP_MASK =          0xFFFFFFFFFFFFFFF0; // prettier-ignore
-
-    //1. Keep leverage when the Stop Loss order is triggered (0 for false, 1 for true)
-    uint64 private constant EXTRA2_ADD_POS_KEEP_LEV_ON_SL_MASK =          0xFFFFFFFFFFFFFF0F; // prettier-ignore
-
-    uint64 private constant EXTRA2_ADD_POS_KEEP_LEV_ON_SL_BIT_POS = 4;
-
     struct Props {
         uint8 version;
         uint32 updatedAtBlock;

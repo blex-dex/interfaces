@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: BUSL-1.1
 pragma solidity ^0.8;
 
-import "./PositionStruct.sol";
+import {Position} from "./PositionStruct.sol";
 
 interface IPositionBook {
     function market() external view returns (address);

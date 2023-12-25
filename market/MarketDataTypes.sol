@@ -60,4 +60,10 @@ library MarketDataTypes {
 
     uint256 constant ADD_POS_KEEP_LEVERAGE_ON_TAKE_PROFIT = 2;
     uint256 constant ADD_POS_KEEP_LEVERAGE_ON_STOP_LOSS = 3;
+
+    function isFromMarket(
+        UpdateOrderInputs memory _params
+    ) internal pure returns (bool) {
+        return _params.inputs.length >= 2 && _params.inputs[1] > 0;
+    }
 }

@@ -6,6 +6,14 @@ import {IFeeRouter} from "../fee/IFeeRouter.sol";
 import {IOrderBook} from "../order/IOrderBook.sol";
 
 interface IMarket {
+    struct OrderExec {
+        address market;
+        address account;
+        uint64 orderID;
+        bool isIncrease;
+        bool isLong;
+    }
+
     function updateCumulativeFundingRate() external;
 
     function marketValid() external view returns (address);

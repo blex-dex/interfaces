@@ -10,6 +10,8 @@ interface IFastPriceFeed {
         IMarket.OrderExec[] memory orders
     ) external;
 
+    function lastUpdatedAtBlock(address name) external view returns (uint256);
+
     function setPrices(
         address[] memory _tokens,
         uint256[] memory _prices,

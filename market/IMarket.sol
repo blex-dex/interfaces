@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: BUSL-1.1
-pragma solidity ^0.8;
+pragma solidity ^0.8.0;
 
 import {IPositionBook} from "../position/IPositionBook.sol";
 import {IFeeRouter} from "../fee/IFeeRouter.sol";
+import {IOrderBook} from "../order/IOrderBook.sol";
 
 interface IMarket {
     function updateCumulativeFundingRate() external;
@@ -26,4 +27,8 @@ interface IMarket {
     function positionStoreShort() external view returns (address); // slot 2
 
     function vaultRouter() external view returns (address); // slot 2
+
+    function orderBookLong() external view returns (IOrderBook); // slot 2
+
+    function orderBookShort() external view returns (IOrderBook); // slot 2
 }

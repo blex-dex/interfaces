@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: BUSL-1.1
-pragma solidity ^0.8;
+pragma solidity ^0.8.0;
 
 import {MarketDataTypes} from "./MarketDataTypes.sol";
 import "../position/PositionStruct.sol";

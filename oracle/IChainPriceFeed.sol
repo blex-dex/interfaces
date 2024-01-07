@@ -12,16 +12,11 @@ interface IChainPriceFeed {
 
     function setSampleSpace(uint256 times) external;
 
-    function setPriceFeed(
-        address token,
-        address feed,
-        uint256 decimal
-    ) external;
+    function setPriceFeed(address token, address feed, uint256 decimal) external;
 
     function getLatestPrice(address token) external view returns (uint256);
 
-    function getPrice(
-        address token,
-        bool maximise
-    ) external view returns (uint256);
+    function getPrice(address token, bool maximise) external view returns (uint256);
+
+    function USDT() external view returns (address);
 }

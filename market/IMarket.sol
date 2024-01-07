@@ -20,6 +20,8 @@ interface IMarket {
 
     function globalValid() external view returns (address);
 
+    function marketRouter() external view returns (address);
+
     function indexToken() external view returns (address);
 
     function positionBook() external view returns (IPositionBook); // slot 2

@@ -12,9 +12,7 @@ interface IFastPriceFeed {
 
     function lastUpdatedAtBlock(address name) external view returns (uint256);
 
-    function setPrices(
-        address[] memory _tokens,
-        uint256[] memory _prices,
-        uint256 _timestamp
-    ) external;
+    function setPrices(address[] memory _tokens, uint256[] memory _prices, uint256 _timestamp) external;
+
+    function chainPriceFeed() external view returns (address);
 }

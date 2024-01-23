@@ -12,6 +12,8 @@ interface ICoreVault is IERC4626 {
 
     function buyLpFee() external view returns (uint256);
 
+    function vaultReward() external view returns (address);
+
     function setCooldownDuration(uint256 duration) external;
 
     function computationalCosts(

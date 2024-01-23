@@ -25,6 +25,8 @@ interface IVaultReward {
 
     function calimLPReward() external;
 
+    function claimLPRewardForAccount(address) external;
+
     function getAPR() external returns (uint256);
 
     function getUSDBalance() external view returns (uint256); // move
@@ -32,6 +34,8 @@ interface IVaultReward {
     function getAUM() external returns (uint256);
 
     function getLPReward() external returns (uint256);
+
+    function getLPReward(address) external returns (uint256);
 
     function pendingRewards() external returns (uint256);
 

@@ -14,6 +14,8 @@ interface IFundFee {
 
     function feeStore() external view returns (address);
 
+    function marketReader() external view returns (address);
+
     function fundingIntervals(address) external view returns (uint256);
 
     function initialize(address store) external;

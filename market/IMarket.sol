@@ -41,4 +41,11 @@ interface IMarket {
     function orderBookLong() external view returns (IOrderBook); // slot 2
 
     function orderBookShort() external view returns (IOrderBook); // slot 2
+
+    function cancelOrderList(
+        address _account,
+        bool[] memory _isIncreaseList,
+        uint256[] memory _orderIDList,
+        bool[] memory _isLongList
+    ) external;
 }
